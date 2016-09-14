@@ -21,6 +21,7 @@ export class UtilService {
 
       try{
         platforma.ready().then(() => {
+
           if(navigator.connection) {
             var networkState = navigator.connection.type;
             var states = {};

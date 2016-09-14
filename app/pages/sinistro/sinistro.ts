@@ -23,6 +23,7 @@ export class SinistroPage {
 	}
 
   ngOnInit() {
+
     this.platform.ready().then(() => {
 
       this.buscaListaSinistros();
@@ -30,16 +31,15 @@ export class SinistroPage {
   }
 
   public buscaListaSinistros(){
+
     new UtilService(this.platform).checkNetwork().then((data) => {
 
       //Verificar se o usuário está conectado na internet, se sim, vamos trazer os dados da internet e armazenar na tabela
       if(data.PossuiConexao)
       {
-        console.log('buscar da internet');
         this.atualizarListaSinistros();
       }
       else { //Não possui conexão, então busca da base local
-       console.log('buscar da base local');
         this.buscarListaSinistrosLocal();
       }
     });

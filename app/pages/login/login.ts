@@ -22,6 +22,7 @@ export class LoginPage {
   constructor(private http: Http, private navCtrl: NavController) {}
 
   public efetuarLogin(){
+
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({ headers: headers });
     let url:string = Parametros.URL_AMBIENTE + "/Login";
@@ -56,6 +57,7 @@ export class LoginPage {
   }
 
   handleError(error: any) {
+
 		//Esconder o carregando
 		this.loading.dismiss();
 
