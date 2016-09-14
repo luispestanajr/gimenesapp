@@ -1,0 +1,21 @@
+<ion-header>
+	<ion-navbar headerNav>
+		<app-header></app-header>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	<div padding-left padding-bottom>
+		<h2>{{numeroSinistro}}</h2>
+		<p>{{nomeSegurado}}</p>
+	</div>
+
+  <ion-list *ngFor="let item of listaDiligencias" (click)="visualizarDetalheDiligencia(item)">
+    <a ion-item>
+      <h3>{{item.TITULO_DILIGENCIA}}</h3>
+      <p>{{item.DESC_DILIGENCIA}}</p>
+    </a>
+  </ion-list>
+  <button fab fab-bottom fab-right fab-fixed (click)="atualizarListaDiligencias()">
+    <ion-icon name="md-refresh"></ion-icon>
+  </button>
+</ion-content>

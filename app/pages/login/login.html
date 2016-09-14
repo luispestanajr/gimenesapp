@@ -1,0 +1,18 @@
+<ion-header>
+	<ion-navbar headerNav>
+		<app-header></app-header>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label floating labelLogin>E-mail</ion-label>
+            <ion-input block type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating labelLogin>Senha</ion-label>
+            <ion-input block type="password" [(ngModel)]="senha"></ion-input>
+        </ion-item>
+    </ion-list>
+    <button class="btnLogin" block (click)="efetuarLogin()">Entrar</button>
+</ion-content>

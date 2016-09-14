@@ -1,0 +1,32 @@
+<ion-header>
+	<ion-navbar headerNav>
+		<app-header></app-header>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-grid class="grid">
+		<ion-row class="linhaFoto">
+			<ion-col class="colunaFoto">
+					<ion-img class="imgFoto" src="{{imgUpload}}"></ion-img>
+			</ion-col>
+		</ion-row>
+		<ion-row padding-top *ngIf="isUploading">
+			<ion-col text-center>
+					<progress value="{{progress}}" max="100"></progress>
+					<br>
+					{{progress}}%
+			</ion-col>
+		</ion-row>
+		<ion-row padding-top *ngIf="!isUploading">
+			<ion-col>
+				<ion-select class="tipoAnexo" placeholder="Tipo de Anexo" interface="action-sheet" [(ngModel)]="tipoAnexo" cancelText="Cancelar" okText="Selecionar">
+					<ion-option *ngFor="let item of listaTiposAnexos" [value]="item.COD_TIPO_ANEXO">{{item.DESC_TIPO_ANEXO}}</ion-option>
+				</ion-select>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+	<button fab fab-bottom fab-right fab-fixed (click)="gravarFoto()" *ngIf="!isUploading">
+		<ion-icon name="checkmark"></ion-icon>
+	</button>
+</ion-content>

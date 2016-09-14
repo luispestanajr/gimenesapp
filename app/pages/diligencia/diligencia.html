@@ -1,0 +1,12 @@
+<ion-header>
+	<ion-navbar headerNav>
+		<app-header></app-header>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h3>{{objDiligencia.TITULO_DILIGENCIA}}</h3>
+  <p>{{objDiligencia.DESC_DILIGENCIA}}</p>
+  <button fab fab-bottom fab-right fab-fixed (click)="adicionarFotoDiligencia()">
+    <ion-icon name="camera"></ion-icon>
+  </button>
+</ion-content>

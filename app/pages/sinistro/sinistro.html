@@ -1,0 +1,16 @@
+<ion-header>
+	<ion-navbar headerNav>
+		<app-header></app-header>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list *ngFor="let item of listaProcessos" (click)="itemSelected(item)">
+        <a ion-item>
+          <h3>{{item.NUMERO_SINISTRO}}</h3>
+          <p>{{item.NOME_SEGURADO}}</p>
+        </a>
+    </ion-list>
+    <button fab fab-bottom fab-right fab-fixed (click)="atualizarListaSinistros()">
+      <ion-icon name="md-refresh"></ion-icon>
+    </button>
+</ion-content>
